@@ -1,15 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv02i1s4s40un"]
+[gd_scene load_steps=5 format=3 uid="uid://bv02i1s4s40un"]
 
 [ext_resource type="Script" uid="uid://dky2jhkugqjft" path="res://Player/Player.cs" id="1_3qydi"]
+[ext_resource type="Texture2D" uid="uid://cl0h16renur6b" path="res://sucai/character_001.png" id="2_q3lat"]
+[ext_resource type="PackedScene" uid="uid://b2pwmsw52fbup" path="res://Bullets/Bullet.tscn" id="2_tok1r"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hvfyp"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q3lat"]
+radius = 31.0
+height = 76.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_3qydi")
+BulletScene = ExtResource("2_tok1r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_q3lat")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_hvfyp")
+position = Vector2(-4, 22)
+shape = SubResource("CapsuleShape2D_q3lat")
 
 [node name="GunPoint" type="Marker2D" parent="."]
+position = Vector2(-6, 39)

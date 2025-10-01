@@ -1,5 +1,8 @@
-CharacterBody2D
-Marker2D
+Label
+CanvasLayer
 CollisionShape2D
 Sprite2D
+CharacterBody2D
+Area2D
+Marker2D
 Node

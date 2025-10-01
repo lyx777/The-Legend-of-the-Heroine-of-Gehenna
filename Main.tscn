@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://2228b37xmrt4"]
+[gd_scene load_steps=5 format=3 uid="uid://2228b37xmrt4"]
+
+[ext_resource type="Script" uid="uid://ckf4inycx1dxq" path="res://Main.cs" id="1_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://bv02i1s4s40un" path="res://Player/Player.tscn" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://b2pwmsw52fbup" path="res://Bullets/Bullet.tscn" id="2_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://bb16vjt7eitwd" path="res://Enemys/Enemy.tscn" id="2_r0du0"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_cm0pq")
+BulletScene = ExtResource("2_cm0pq")
+EnemyScene = ExtResource("2_r0du0")
+
+[node name="Player" parent="." instance=ExtResource("1_uu6xs")]
+position = Vector2(139, 484)
+
+[node name="Enemy" parent="." instance=ExtResource("2_r0du0")]
+position = Vector2(831, 335)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 133.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 24
+text = "Score:0"
+
+[node name="EndGame" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 432.0
+offset_top = 264.0
+offset_right = 903.0
+offset_bottom = 401.0
+theme_override_colors/font_color = Color(0.5254902, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "YOU DIED"

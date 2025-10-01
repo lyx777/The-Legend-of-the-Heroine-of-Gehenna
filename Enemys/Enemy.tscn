@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb16vjt7eitwd"]
+
+[ext_resource type="Script" uid="uid://i1tplsrjikpo" path="res://Enemys/Enemy.cs" id="1_rj18w"]
+[ext_resource type="Texture2D" uid="uid://bu33pt1a5tapb" path="res://sucai/character_004.png" id="2_4cb4a"]
+[ext_resource type="PackedScene" uid="uid://b2pwmsw52fbup" path="res://Bullets/Bullet.tscn" id="2_ugyyy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rj18w"]
+radius = 23.0
+height = 92.0
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+position = Vector2(-1, -2)
+script = ExtResource("1_rj18w")
+MaxHealth = 15
+BulletScene = ExtResource("2_ugyyy")
+ShootCD = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -26)
+texture = ExtResource("2_4cb4a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -14)
+shape = SubResource("CapsuleShape2D_rj18w")
+
+[node name="GunPoint" type="Marker2D" parent="."]
+position = Vector2(0, 14)

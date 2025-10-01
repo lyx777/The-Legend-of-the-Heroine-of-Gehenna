@@ -11,17 +11,23 @@ config_version=5
 [application]
 
 config/name="rougelike"
+run/main_scene="uid://2228b37xmrt4"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [dotnet]
 
 project/assembly_name="rougelike"
+
+[global_group]
+
+enemy=""
+player=""
 
 [input]
 
